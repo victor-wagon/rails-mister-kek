@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Ingredient.create(name: "cherry")
+Ingredient.create(name: "mint")
+Ingredient.create(name: "lime")
+
+counter = 0
+
+5.times do
+  cocktail = Cocktail.new(name: "keoflex#{counter}")
+  cocktail.save
+  2.times do
+    dose = Dose.new(description: "3cl of", cocktail_id: cocktail)
+    dose.save
+  end
+  counter += 1
+  p counter
+end

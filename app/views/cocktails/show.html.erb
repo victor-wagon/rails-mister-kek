@@ -1,2 +1,32 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 offset-col-3">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="text-center border">
+            <%= @cocktail.name %>
+          </h3>
+          <hr>
+          <div class="d-flex align-items-center justify-content-center">
+            <h5 class="mt-1">Doses</h5>
+            <%= link_to "New", new_cocktail_dose_path(@cocktail), class: "badge badge-secondary" %>
+          </div>
+          <div class="d-flex">
+            <div class="bg-dark">
+              <h5>ingredients</h5>
+            </div>
+            <div>
+              <ul>
+                <% @doses.each do |dose| %>
+                  <li>
+                    <%= "#{dose.ingredient.name} - #{dose.description}" %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
