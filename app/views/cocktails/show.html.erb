@@ -2,10 +2,12 @@
   <div class="row justify-content-center">
     <div class="col-6 offset-col-3">
       <div class="card">
-        <div class="card-body">
-          <h3 class="text-center border">
-            <%= @cocktail.name %>
-          </h3>
+        <div class="card-body" style="">
+          <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3), url("<%= cl_image_path @cocktail.photo.key %>")">
+            <h3 class="text-center">
+              <%= @cocktail.name %>
+            </h3>
+          </div>
           <hr>
           <div class="d-flex align-items-center justify-content-center">
             <h5 class="mt-1">Doses</h5>
@@ -23,6 +25,9 @@
                   </li>
                 <% end %>
               </ul>
+            </div>
+            <div class="card-category" >
+              Cool article
             </div>
           </div>
         </div>
